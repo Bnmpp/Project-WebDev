@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event</title>
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/event.css">
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/90025d2120.js" crossorigin="anonymous"></script>
+    <!-- SweetAlert2 library for pop-up alerts -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/logo.png" alt="Friendfy Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/homepage">HOME</a></li>
+                <li><a class="active" href="/event">EVENT</a></li>
+                <li><a href="/aboutus">ABOUT US</a></li>
+                <li><a href="/support">SUPPORT</a></li>
+            </ul>
+            <a href="/login"><button class="login-btn">Join Now</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner image for the event page -->
+        <section class="banner">
+            <img src="/eventimg.jpg" alt="event">
+        </section>
+
+        <!-- Search filters section -->
+        <div class="filter-bar">
+            <!--  by category -->
+            <div class="dropdown">
+                <select id="categorySelect" class="category-dropdown">
+                    <option value="all">All Categories</option>
+                    <option value="Sports & Wellness">Sports & Wellness</option>
+                    <option value="Creative & Hobbies">Creative & Hobbies</option>
+                    <option value="Community & Social">Community & Social</option>
+                </select>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+
+            <!--  by event name -->
+            <div class="searchbox">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search for event name...">
+            </div>
+
+            <!--  by location -->
+            <div class="iconsearch">
+                <span class="icon" onclick="toggleDropdown()">
+                    <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <select id="locationSelect" class="content-dropdown" style="display: none;">
+                    <option value="all">All Locations</option>
+                    <option value="Skibidi Field">Skibidi Field</option>
+                    <option value="Skibidi Court">Skibidi Court</option>
+                    <option value="Skibidi Center">Skibidi Center</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Section to dynamically load events -->
+        <section class="e2"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Friendfy</h3>
+        <div class="socail-logo">
+            <img src="/icons8-tiktok-48.png" alt="tiktok">
+            <img src="/icons8-facebook-48.png" alt="facebook">
+            <img src="/icons8-instagram-48.png" alt="instagram">
+        </div>
+        <ul class="nav-links">
+            <li><a href="/homepage">HOME</a></li>
+            <li><a class="active" href="/event">EVENT</a></li>
+            <li><a href="/aboutus">ABOUT US</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+        </ul>
+        <div>
+            <p>©2025 Skibidi DobDob Co., Ltd. | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Toggle function for location dropdown -->
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById("locationSelect");
+            menu.style.display = menu.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+    <!-- Script to load and render events dynamically -->
+    <script type="module" src="/loopevent.js"></script>
+
+</body>
+
+<!-- Axios library for HTTP requests -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

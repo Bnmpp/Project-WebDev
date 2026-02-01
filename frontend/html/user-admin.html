@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="/style-admin.css">
+  <!-- SweetAlert2 library for enhanced popups and alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/90025d2120.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- Header section -->
+  <div class="header">
+    <div class="logo-section">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <h3>Management</h3>
+    </div>
+
+    <div class="user-section">
+      <img src="/icon-user.png" />
+      Admin
+    </div>
+  </div>
+
+  <!-- Sidebar menu with navigation links -->
+  <div class="sidebar">
+    <!-- for admin management -->
+    <div class="menu-item active">
+      <a href="/user-admin" style="text-decoration: none; color: black;">
+        <img src="/icon-user.png" class="menu-icon">
+        <span>Admin</span>
+      </a>
+    </div>
+    <!-- for event management  -->
+    <div class="menu-item">
+      <a href="/event-admin" style="text-decoration: none; color: black;">
+        <img src="/icon-event.png" class="menu-icon">
+        <span>Event</span>
+      </a>
+    </div>
+    <!-- Logout button -->
+    <div class="button-container">
+      <a href="/login-admin">
+        <button class="logout-button">
+          <img src="/icon-logout(white).png" class="logout-icon" />
+          <span>Log Out</span>
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content area where user data is displayed -->
+  <div class="main-content">
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>BirthDate</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="adminTable">
+      </tbody>
+    </table>
+
+    <!-- Modal for editing admin details -->
+    <div id="editModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <h2>Edit Admin</h2>
+        <form id="editAdminForm">
+          <input type="hidden" id="admin_id">
+          <label for="first_name">First Name:</label>
+          <input type="text" id="a_fname" required>
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="a_lname" required>
+          <label for="address">BirthDate:</label>
+          <input type="text" id="a_birthdate">
+          <label for="email">Email:</label>
+          <input type="email" id="a_email" required>
+          <button type="button" id="saveChangesBtn">Save Changes</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript-->
+  <script src="/user-admin.js"></script>
+
+</body>
+
+<!-- Axios for making HTTP requests -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

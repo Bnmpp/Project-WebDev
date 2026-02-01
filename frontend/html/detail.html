@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event Detail</title>
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/detail.css">
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/90025d2120.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/logo.png" alt="Friendfy Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/homepage">HOME</a></li>
+                <li><a class="active" href="/event">EVENT</a></li>
+                <li><a href="/aboutus">ABOUT US</a></li>
+                <li><a href="/support">SUPPORT</a></li>
+            </ul>
+            <a href="/login"><button class="login-btn">Join Now</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="event-section">
+            <div class="event-container">
+                <div class="event-flex">
+                    <a href="/event"><i id="back-icon" class="fa-solid fa-arrow-left"></i></a>
+                    <img src="/event/football.jpg" alt="footballfield" class="event-img">
+                    <div class="event-body">
+                        <h2 class="event-title"><i class="fa-solid fa-futbol"></i> Goal Together</h2>
+                        <div class="badge">100 baht / person</div>
+                        <p class="subtitle"><em>Join us for this sport event!</em></p>
+                        <p class="description">
+                            Get ready for an exciting workout and social experience! Whether you're a football
+                            enthusiast or
+                            just looking to stay active, this is the perfect place to meet new friends and enjoy a great
+                            atmosphere.
+                        </p>
+
+                        <ul class="event-info">
+                            <li><i class="fa-solid fa-location-dot"></i> Skibidi Field</li>
+                            <li><i class="fa-solid fa-calendar"></i> 30 May 2025</li>
+                            <li><i class="fa-solid fa-clock"></i> 6:00 PM → 9:00 PM</li>
+                            <li><a href="#" class="get-direction"><i class="fa-solid fa-map-pin"></i> Get direction</a>
+                            </li>
+                        </ul>
+                        <button class="join-btn">Join Event</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <h3> Friendfy </h3>
+        <div class="socail-logo">
+            <img src="/icons8-tiktok-48.png" alt="tiktok">
+            <img src="/icons8-facebook-48.png" alt="facebook">
+            <img src="/icons8-instagram-48.png" alt="instagram">
+        </div>
+        <ul class="nav-links">
+            <li><a href="/homepage">HOME</a></li>
+            <li><a class="active" href="/event">EVENT</a></li>
+            <li><a href="/aboutus">ABOUT US</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+        </ul>
+        <div>
+            <p> ©2025 Skibidi DobDob Co., Ltd. | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script type="module" src="/detail.js"></script>
+</body>
+
+<!-- Axios library for HTTP requests -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

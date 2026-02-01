@@ -1,0 +1,85 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lora;
+}
+
+/* CSS NAV */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 60px;
+    background-color: #FFF684;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666666;
+    opacity: 0.7;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #6A0DAD;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+.login-btn {
+    background-color: #9b99ce;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.login-btn:hover {
+    background-color: #bb7ea5;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 60px;
+    background-color: #FFF684;
+    position: relative;
+}
+
+footer h3 {
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.socail-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin-top: 10px;
+}

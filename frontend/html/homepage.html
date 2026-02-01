@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homepage</title>
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/homepage.css" />
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/90025d2120.js" crossorigin="anonymous"></script>
+
+    <!-- Zoom effect on banner when scrolling -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const banner = document.querySelector('.banner');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const zoomLevel = 100 + scrollTop / 50;
+            banner.style.backgroundSize = `${zoomLevel}%`;
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/logo.png" alt="Friendfy Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/homepage">HOME</a></li>
+                <li><a href="/event">EVENT</a></li>
+                <li><a href="/aboutus">ABOUT US</a></li>
+                <li><a href="/support">SUPPORT</a></li>
+            </ul>
+            <a href="/login"><button class="login-btn">Join Now</button></a>
+        </nav>
+    </header>
+
+    <!-- Banner section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Friendfy </h1>
+            <h3> A Place to Find Friends </h3>
+            <p> Join our welcoming community where friendships begin and memories are made.</p>
+        </div>
+    </section>
+
+    <!-- Highlights section -->
+    <section class="highlights">
+        <div class="title">
+            <h2>Discover Our Communities</h2>
+            <p class="subtitle">Whether you're into sports, games, or cooking — there's a place for everyone here.</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-basketball"></i>
+                <p>Sport Club</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>Gaming Friends</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-kitchen-set"></i>
+                <p>Cooking Workshop</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote section -->
+    <section class="citation">
+        <div class="cta">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>Your new best friend is waiting. <br> Come say hi!</p>
+        </div>
+    </section>
+
+    <!-- Getting started guide -->
+    <section class="how-start">
+        <img src="/hp_friend2.jpeg" alt="Friendfy">
+        <div class="details">
+            <h2>How to Get Started?</h2>
+            <ul>
+                <li><i class="fa-solid fa-circle-check"></i> Sign Up</li>
+                <li><i class="fa-solid fa-circle-check"></i> Create a Profile</li>
+                <li><i class="fa-solid fa-circle-check"></i> Join an event</li>
+                <li><i class="fa-solid fa-circle-check"></i> Make New Friends</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Friendfy</h3>
+        <div class="socail-logo">
+            <img src="/icons8-tiktok-48.png" alt="tiktok">
+            <img src="/icons8-facebook-48.png" alt="facebook">
+            <img src="/icons8-instagram-48.png" alt="instagram">
+        </div>
+        <ul class="nav-links">
+            <li><a class="active" href="/homepage">HOME</a></li>
+            <li><a href="/event">EVENT</a></li>
+            <li><a href="/aboutus">ABOUT US</a></li>
+            <li><a href="/support">SUPPORT</a></li>
+        </ul>
+        <div>
+            <p>©2025 Skibidi DobDob Co., Ltd. | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

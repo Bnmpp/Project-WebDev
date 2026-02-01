@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to FRIENDFY</title>
+	<!-- External stylesheets -->
+	<link rel="stylesheet" href="/login.css">
+	<!-- SweetAlert2 library for pop-up alerts -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!-- Google reCAPTCHA API -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+	<div class="container" id="container">
+		<!-- Sign Up Form -->
+		<div class="form-container sign-up-container">
+			<form action="/login" method="POST">
+				<img src="/logo.png" class="logo" />
+				<h1>Create Account</h1>
+				<input type="text" placeholder="Username" name="display_name" required />
+				<input type="text" placeholder="First Name" name="fname" required />
+				<input type="text" placeholder="Last Name" name="lname" required />
+				<input type="date" name="birth_date" required />
+
+				<!-- Gender Styled Select -->
+				<select name="gender" class="styled-select" required>
+					<option value="" disabled selected>Select Gender</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="non-binary">Non-binary</option>
+					<option value="other">Other</option>
+				</select>
+
+				<input type="tel" placeholder="Phone Number" name="phone_number" required />
+				<input type="email" placeholder="Email" name="email" required />
+				<input type="password" placeholder="Password" name="password" required />
+
+				<span>or register with</span>
+				<div class="social-container">
+					<a href="#"><img src="/logo-google.png" alt="Google" /></a>
+					<a href="#"><img src="/logo-facebook.png" alt="Facebook" /></a>
+					<a href="#"><img src="/logo-apple.png" alt="Apple" /></a>
+				</div>
+				<button type="submit">Sign Up</button>
+			</form>
+		</div>
+
+		<!-- Sign In Form -->
+		<div class="form-container sign-in-container">
+			<form id="login" action="/loginUser" method="POST">
+				<img src="/logo.png" class="logo" />
+				<h1>Sign in</h1>
+				<input type="text" name="username" id="username" placeholder="Username" required>
+				<input type="password" class="password" id="password" placeholder="Password" name="password" required />
+				<div class="g-recaptcha" data-sitekey="6LejyyQrAAAAAADbj-MtxvZkU63HlLMYIdDTex3l"></div>
+				<div class="social-container">
+					<a href="#"><img src="/logo-google.png" alt="Google" /></a>
+					<a href="#"><img src="/logo-facebook.png" alt="Facebook" /></a>
+					<a href="#"><img src="/logo-apple.png" alt="Apple" /></a>
+				</div>
+				<a href="#">Forgot your password?</a>
+				<button type="submit" class="logIn">Sign In</button>
+				<div class="login-select">
+					<button type="button" onclick="redirectTo('user')" class="role-btn">User Login</button>
+					<button type="button" onclick="redirectTo('admin')" class="role-btn">Admin Login</button>
+				</div>
+			</form>
+		</div>
+		<!-- Login Selection -->
+		<div class="login-select">
+			<button onclick="redirectTo('user')" class="role-btn">User Login</button>
+			<button onclick="redirectTo('admin')" class="role-btn">Admin Login</button>
+		</div>
+		<!-- Overlay -->
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+	<script src="/login.js"></script>
+
+</body>
+
+</html>

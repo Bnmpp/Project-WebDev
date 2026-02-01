@@ -1,0 +1,534 @@
+:root {
+    --sidebar-color: #f5f5f5;
+    --active-menu: #ffe76b;
+    --text-color: #333;
+    --chart-blue: #8ecae6;
+    --chart-yellow: #ffe76b;
+    --chart-red: #ff5d5d;
+    --chart-green: #4ade80;
+    --chart-orange: #ffb74d;
+    --test-button-bg: #a1d6e2;
+}
+
+body {
+    font-family: Lora;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    margin-left: 210px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: var(--chart-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    overflow: hidden;
+    /* add */
+}
+
+.back-icon {
+    width: 60%;
+    /* ปรับขนาดตามความเหมาะสม */
+    height: 60%;
+    object-fit: contain;
+    transform: translateX(-2px);
+}
+
+.user-section {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-grow: 2;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.user-section img {
+    margin-left: 60px;
+}
+
+.sidebar {
+    width: 210px;
+    background-color: var(--sidebar-color);
+    height: 100vh; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.logout-button {
+    background-color: #E45353;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    margin: 15px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    border: none;
+    outline: none;
+}
+
+.logout-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.menu-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #ddd; /* เมื่อเมาส์ชี้เมนู, สีพื้นหลังจะเปลี่ยน */
+    transform: translateX(10px); /* เพิ่ม */
+}
+
+.menu-item.active {
+    font-weight: bold;
+    /* ทำให้ข้อความเข้มขึ้น */
+    color: #000;
+    /* สีของข้อความ */
+    background-color: var(--active-menu);
+    /* เปลี่ยนสีพื้นหลังเมื่อเมนูถูกเลือก */
+}
+
+.menu-item i {
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 210px;
+    padding: 20px;
+}
+
+.stat-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 32%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.chart-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 48%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.chart-card-full {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.subtitle.dropdown {
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 5px 0;
+    margin: 5px 0 0 0;
+    display: none;
+    z-index: 10;
+    width: 120px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/*    Table   */
+/* ==== ตาราง: เส้นแบ่งแถวและคอลัมน์ ==== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #ffed80;
+}
+
+thead th {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #8E95A9;
+    border-bottom: 2px solid #e0e0e0; /* เส้นใต้หัวตาราง */
+}
+
+/* เส้นแบ่งคอลัมน์ */
+table td, table th {
+    border-right: 1px solid #e0e0e0;
+    padding: 12px;
+}
+
+/* ลบเส้นคอลัมน์ขวาสุด */
+table td:last-child, table th:last-child {
+    border-right: none;
+}
+
+/* เส้นแบ่งแถว */
+table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* ลบเส้นใต้แถวสุดท้าย (ถ้าต้องการให้ดู clean) */
+table tr:last-child {
+    border-bottom: none;
+}
+
+
+/* add event */
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.add-event-btn {
+    background-color: #89C7E7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.search-input {
+    padding: 10px 15px;
+    justify-content: center;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+.search-icon {
+    align-items: center;
+}
+
+
+/* event popup */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-body .form-group {
+    margin-bottom: 20px; /* เว้นระยะห่างด้านล่างระหว่างฟิลด์ */
+}
+
+.modal-container {
+    padding: 20px;
+    background-color: white;
+    width: 750px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-control.yellow-bg {
+    background-color: #ffe76b;
+}
+
+.image-upload {
+    background-color: #f0f0f0;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 30px;
+    color: #777;
+}
+
+.button-add {
+    background-color: #8ecae6;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: block;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.date-time-container {
+    display: flex;
+    gap: 10px;
+}
+
+.date-input {
+    flex: 2;
+}
+
+.time-input {
+    flex: 1;
+}
+
+#editAdminForm label {
+    display: block;
+    font-weight: bold;
+    margin: 5px;
+    color: #333;
+}
+
+#editAdminForm input[type="text"],
+#editAdminForm input[type="email"],
+#editAdminForm input[type="hidden"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#editAdminForm button {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn, .delete-btn{
+    display: block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border: none;
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover{
+    background-color: #45A049;
+}
+
+.delete-btn{
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-btn:hover{
+    background-color: #c82333;
+}
+
+
+#saveChangesBtn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+#saveChangesBtn:hover {
+    background-color: #218838;
+}
+
+#cancelBtn{
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#cancelBtn:hover {
+    background-color: #c82333;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.container-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.form-group-select{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    label{
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+}

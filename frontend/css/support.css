@@ -1,0 +1,113 @@
+/* nav: link active -> สีเข้มขึ้นกว่าอันอื่น */
+.nav-links a.active {
+    color: #000000;
+}
+
+/* Banner */
+.banner {
+    background-image: url("/banner-support.png");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    /*horizontal*/
+    align-items: center;
+    /*vertical*/
+    text-align: center;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: whitesmoke;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.banner-content h1 {
+    font-size: 60px;
+    margin: 0;
+    animation: zoomIn 1s ease-out forwards;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    animation: fadeInText 1.5s ease-out forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Option */
+.option {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 100px;
+    margin-bottom: 60px;
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 100px 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card i {
+    margin-bottom: 15px;
+    font-size: 64px;
+}
+
+.card p {
+    font-weight: bold;
+    line-height: 1.2;
+    font-size: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}

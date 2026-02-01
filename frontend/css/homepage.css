@@ -1,0 +1,242 @@
+/* nav: link active -> สีเข้มขึ้นกว่าอันอื่น */
+.nav-links a.active {
+    color: #000000;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    background-image: url("/hp_friend.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: background-size 0.3s ease-out;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    animation: moveBackground 30s linear infinite;}
+
+.banner-content h1 {
+    font-size: 100px;
+    font-family: Lucida Handwriting;
+    margin: 20px 0;
+    animation: zoomIn 1s ease-out forwards;
+}
+
+.banner-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: -10px;
+    animation: fadeInUp 1.3s ease-out forwards;
+}
+
+.banner-content p {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 10px auto;
+    max-width: 600px;
+    animation: fadeInText 1.5s ease-out forwards;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Highlights Section */
+
+.highlights {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.title {
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.title h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+
+}
+
+.card {
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 100px 30px;
+    background-color: #f0f4f8;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.card i {
+    margin-bottom: 70px;
+    color: #7a77bc;
+    font-size: 100px;
+}
+
+.card p {
+    font-weight: bold;
+    line-height: 2;
+    font-size: 26px;
+    color: white;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    background-color: #89C7E7; 
+    backdrop-filter: blur(50px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Citation Section*/
+
+.citation {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    text-align: center;     
+}
+
+.cta i{
+    color: gray;
+    font-size: 80px;
+}
+
+.cta p{
+    margin: 30px;
+    font-size: 50px;
+    color: #333;
+    font-family: Perpetua;
+}
+
+/* How Start Section */
+
+.how-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px;
+    background-color: #f0f4f8;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 80px auto;
+    max-width: 1200px;
+
+}
+
+.how-start img {
+    width: 45%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    width: 50%;
+    padding-left: 40px;
+}
+
+.how-start h2 {
+    font-size: 40px;
+    color: black;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.how-start ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.how-start ul li {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+.how-start ul li i {
+    color: #4CAF50;
+    font-size: 20px;
+    margin-right: 10px; 
+}
+
+.how-start ul li:hover {
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
