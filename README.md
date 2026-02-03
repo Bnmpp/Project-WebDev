@@ -17,10 +17,10 @@
 ### Preparation of Express
 1. Check that the Node.js is installed using the command `node --version` in the terminal.<br>
    If a version number appears (e.g., v22.14.0), Node.js is installed correctly. If not, please download and install the latest version of Node.js.
-2. Open Visual Studio Code and "Open Folder", select the folder `672-projectphase2-sec1_group10`.<br>
+2. Open Visual Studio Code and "Open Folder", select the folder `Project-WebDev`.<br>
    Your directory should have the following structure:
    
-   	   672-projectphase2-sec1_group10
+   	   Project-WebDev
          |_ README.md
          |_ expected_output/
          |_ backend/
