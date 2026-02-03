@@ -1,6 +1,6 @@
 # Friendfy
 
-### Download file from [GitHub](https://github.com/MUICT-Class/672-projectphase2-sec1_group10)
+### Download file from [GitHub](https://github.com/Bnmpp/Project-WebDev/tree/main)
 1. Download `ZIP` file
 2. Extract the `ZIP` file
 
@@ -23,28 +23,28 @@
    	   672-projectphase2-sec1_group10
          |_ README.md
          |_ expected_output/
-         |_ sec1_gr10_fe_src/
-         |_ sec1_gr10_ws_src/
+         |_ backend/
+         |_ frontend/
          |_ sec1_gr10_database.sql
          |_ sec1_gr10_report.pdf
          
 
 4. Open `Terminal` in Visual Studio Code to initialize and set up the project
-	* Change the directory to the correct path using command `cd sec1_gr10_fe_src`
+	* Change the directory to the correct path using command `cd frontend`
  	* Install the following modules using command `npm install express nodemon dotenv mysql2 cors multer node-fetch cookie-parser`
   	* Exit the previous path using command `cd ..`
-  	* Change the directory to the second path using command `cd sec1_gr10_ws_src`
+  	* Change the directory to the second path using command `cd backend`
  	* Install the following modules using command `npm install express nodemon dotenv mysql2 cors multer node-fetch cookie-parser`<br>
 
 After this step, your directory should have the following structure:
    
 	   
-	   672-projectphase2-sec1_group10
+	   Project-WebDev
          |_ README.md
 	     |_ expected_output/
-         |_ sec1_gr10_fe_src/
+         |_ frontend/
 	 	|_node_modules/
-         |_ sec1_gr10_ws_src/
+         |_ backend/
 	 	|_node_modules/
          |_ sec1_gr10_database.sql
          |_ sec1_gr10_report.pdf	
